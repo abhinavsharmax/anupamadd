@@ -32,9 +32,19 @@ class MusicController {
                     this.isPlaying = true;
                     this.updateUI();
                 }).catch(error => {
-                    console.log("Autoplay blocked by browser policy. waiting for interaction.");
+                    console.log("Autoplay blocked. Waiting for user interaction.");
                     this.isPlaying = false;
                     this.updateUI();
+
+                    // Add one-time listener to document to unlock audio on first interaction
+                    const unlock = () => {
+                        this.play();
+                        document.removeEventListener('click', unlock);
+                        document.removeEventListener('touchstart', unlock);
+                    };
+
+                    document.addEventListener('click', unlock, { once: true });
+                    document.addEventListener('touchstart', unlock, { once: true });
                 });
             }
         }
