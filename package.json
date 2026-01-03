@@ -1,0 +1,12 @@
+{
+    "name": "wedding-invite",
+    "version": "1.0.0",
+    "description": "Royal Wedding Invitation with dynamic data and music",
+    "scripts": {
+        "build": "node build.js",
+        "watch": "node watch.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

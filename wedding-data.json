@@ -64,5 +64,6 @@
     "music": {
         "url": "assets/music/music.mpeg",
         "autoplay": true
-    }
+    },
+    "websiteUrl": "https://takshweddinginvitedemo.netlify.app"
 }
