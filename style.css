@@ -765,6 +765,23 @@ a.btn-primary {
         background 0.4s ease;
 }
 
+@media (max-width: 640px) {
+    .btn-primary {
+        padding: 0.9rem 1rem;
+        font-size: 0.8rem;
+        white-space: normal;
+        line-height: 1.2;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .btn-primary span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .btn-primary:hover {
     transform: translateY(-2px);
     background: rgba(255, 230, 175, 1);
