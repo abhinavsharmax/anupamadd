@@ -1,0 +1,1006 @@
+/* Resets & Variables */
+@font-face {
+    font-family: 'Bellefair';
+    src: url('assets/fonts/Bellefair-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lancelot';
+    src: url('assets/fonts/Lancelot-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --gold: #D4AF37;
+    --gold-light: #F4E4BC;
+    --maroon: #800020;
+    --dark-bg: #1a0f0f;
+    --cream: #f3ecba;
+    --cream-light: #d9fff2;
+    --text-primary: #2C2C2C;
+    --font-heading: 'Bellefair', serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Lancelot', sans-serif;
+    --section-height: 100svh;
+    --section-height-md: 160svh;
+    --section-height-lg: 140svh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background-color: var(--dark-bg);
+    /* Fallback */
+    overflow-x: hidden;
+}
+
+/* Common Components */
+section {
+    min-height: var(--section-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--cream-light);
+    margin-bottom: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+}
+
+/* =========================================
+   SCENE LAYOUT ARCHITECTURE
+   ========================================= */
+
+/* 
+   Container for the seamless visual stack 
+   (Hero + Segue + Pathway) 
+*/
+.main-wrapper {
+    width: 100%;
+    max-width: 1024px;
+    margin-inline: auto;
+    overflow-x: hidden;
+    background-color: var(--dark-bg);
+}
+
+/* 
+   1. HERO SECTION (Palace Full)
+   A visual container defined by its artwork.
+   Using <img> to ensure identical scaling with the segue below.
+*/
+#hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: var(--section-height);
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* 
+   2. SEGUE SECTION (Palace Segue)
+   Connects directly to Hero. 
+*/
+#invite {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-top: -1px;
+}
+
+.segue-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: var(--section-height);
+    object-fit: cover;
+    object-position: top center;
+}
+
+.grooms-parents-text,
+.brides-parents-text {
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-bottom: .5rem;
+}
+
+.grooms-parents-name,
+.brides-parents-name {
+    font-size: 1.7em;
+    color: var(--cream);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.invite-text {
+    font-size: 1rem;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+}
+
+.invite-title {
+    font-size: 3rem;
+    color: var(--cream-light);
+    margin-bottom: .5rem;
+    font-family: var(--font-heading);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: .2rem;
+}
+
+.bride-groom-title {
+    font-size: 3rem;
+    color: var(--cream-light);
+    margin-bottom: .5rem;
+    font-family: var(--font-heading);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.breaker {
+    width: 3rem;
+    margin-inline: auto;
+    height: 1px;
+    background-color: var(--cream);
+    margin-bottom: 1.5rem;
+}
+
+/* 
+   3. PATHWAY SCENE
+   Repeating pattern for the content heavy sections.
+   Starts directly after Segue.
+*/
+.pathway-main-wrapper {
+    position: relative;
+    width: 100%;
+    /* Matches width of visuals above */
+    background: url('assets/images/bg-pathway-tile.png');
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 100% auto;
+    /* Ensure the tile scales exactly like the hero images */
+    margin-top: -1px;
+    /* Visual seamlessness */
+    padding-bottom: 4rem;
+}
+
+/* Content Sections within Pathway */
+.pathway-section {
+    position: relative;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+}
+
+/* Divider Architecture */
+.section-divider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.ornament-divider {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ornament-divider.flipped {
+    transform: scaleY(-1);
+}
+
+/* 
+   4. FOOTER
+*/
+#footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: none;
+    /* Override old bg */
+    min-height: auto;
+    align-items: center;
+    /* Center the wrapper */
+}
+
+.footer-constrained-wrapper {
+    width: 100%;
+    max-width: 980px;
+    margin-inline: auto;
+    position: relative;
+    background-color: var(--dark-bg);
+}
+
+.footer-overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 6rem 2rem 4rem 2rem;
+    /* Add padding for content */
+}
+
+.footer-overlay>.end-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    /* Reduced bottom margin */
+}
+
+.countdown-container {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.countdown-label {
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-timer {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    /* Bigger text */
+    color: #fff;
+    font-weight: 200;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-thank-you {
+    color: var(--cream);
+    font-size: 0.9rem;
+    /* Small text */
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer-hashtag {
+    color: var(--cream-light);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-body);
+    letter-spacing: 1px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 150px;
+}
+
+.footer-col-head {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    /* Medium bold */
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.footer-link {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1.1rem;
+    /* Medium */
+    font-family: var(--font-body);
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--gold);
+}
+
+.footer-bottom-palace {
+    position: relative;
+    width: 100%;
+    background: #1a0f0f;
+    min-height: 960px;
+    /* Ensure at least some height */
+}
+
+.footer-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: 1;
+    z-index: 0;
+}
+
+/* 
+   UTILITIES for Embedded Content 
+   The prompt states Hero & Invite text is embedded in images.
+   We hide the HTML text to prevent duplication but keep it for DOM/Accessiblity.
+*/
+.embedded-text-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Overlays for Hero */
+.hero-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Spread names (top) and scroll (bottom) */
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass unless explicit pointer-events:auto on children */
+}
+
+.hero-content-overlay>* {
+    pointer-events: auto;
+    /* Re-enable for interactive children */
+}
+
+/* Overlay for Segue */
+.segue-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    /* ISSUE FIX: Text at top */
+    align-items: flex-start;
+    padding-bottom: 0;
+    pointer-events: none;
+}
+
+.segue-content-overlay>* {
+    pointer-events: auto;
+}
+
+/* Lanterns Fix */
+.lantern-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* ISSUE FIX: Lanterns must stay within bg-palace-full.png section but use full height */
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+/* =========================================
+   CONTENT STYLING TWEAKS
+   ========================================= */
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.names-container {
+    /* ISSUE FIX: Restore visibility of text */
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 10vh;
+}
+
+/* Keep these definitions for SEO/structure even if hidden */
+.pre-title {
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.groom-name,
+.bride-name {
+    font-size: 5rem;
+    line-height: 1;
+    font-family: var(--font-heading);
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    margin-block: .5rem;
+}
+
+.weds-text {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.date-text {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    font-family: var(--font-heading);
+    color: var(--cream);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding: 0.5rem 2rem;
+    display: inline-block;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 5%;
+    /* Adjusted for new hero layout */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    /* Ensure this is visible even if names are hidden */
+    z-index: 30;
+    color: #fff;
+    /* Ensure visibility */
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Invite Section */
+.invite-container {
+    padding-inline: 3rem;
+    max-width: 700px;
+    opacity: 1;
+    pointer-events: auto;
+    text-align: center;
+}
+
+.invite-deco-top,
+.invite-deco-bottom {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-inline: auto;
+    margin-bottom: 2.5rem;
+}
+
+/* Events Grid */
+/* .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem 0;
+} */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    justify-items: center;
+}
+
+.event-card {
+    position: relative;
+    border-radius: 18px;
+    padding: 1.6rem;
+    background: rgba(255, 248, 235, 0.96);
+    border: 1px solid rgba(190, 150, 95, 0.6);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 320px;
+}
+
+.card-inner {
+    text-align: center;
+    font-family: var(--font-body);
+    color: #3b2a1a;
+}
+
+.event-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.6rem;
+}
+
+.event-card h3::before {
+    content: "✦";
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: rgba(190, 150, 95, 0.9);
+}
+
+
+.event-card h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(190, 150, 95, 0.7);
+    margin: 0.6rem auto;
+}
+
+.event-card p {
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: rgba(60, 40, 20, 0.85);
+}
+
+.event-card .venue {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.event-card.highlight-card {
+    transform: translateY(-10px) scale(1.03);
+    z-index: 2;
+
+    background: rgba(255, 248, 235, 1);
+
+    border-color: rgba(215, 180, 120, 0.9);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(215, 180, 120, 0.35);
+
+    animation: royalGlow 6s ease-in-out infinite;
+}
+
+.event-card.highlight-card h3 {
+    color: #5a3a18;
+    letter-spacing: 0.22em;
+}
+
+.event-card.highlight-card h3::before {
+    content: "✦";
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: rgba(215, 180, 120, 1);
+}
+
+@keyframes royalGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 28px 60px rgba(0, 0, 0, 0.45),
+            0 0 40px rgba(215, 180, 120, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 28px 60px rgba(0, 0, 0, 0.45),
+            0 0 60px rgba(215, 180, 120, 0.45);
+    }
+}
+
+
+
+
+
+.whatsapp-icon {
+    display: inline-block;
+    margin-right: 1rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Map */
+.map-wrapper {
+    position: relative;
+    max-width: 520px;
+    margin: 3rem auto 2rem;
+    text-align: center;
+}
+
+.map-visual {
+    width: 100%;
+    height: auto;
+
+    border-radius: 18px;
+
+    background: #fff3db;
+    padding: 14px;
+
+    border: 1px solid rgba(190, 150, 95, 0.6);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+
+a.btn-primary {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    padding: 0.9rem 2.6rem;
+    border-radius: 999px;
+
+    margin-top: 2rem;
+
+    background: rgba(255, 235, 190, 0.92);
+    color: #4b2e1f;
+
+    border: 1px solid rgba(180, 140, 90, 0.6);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 230, 175, 1);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.rsvp-form {
+    padding: 2rem 1rem;
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+    border-radius: 18px;
+    padding: 1.6rem;
+    background: rgba(255, 248, 235, 0.96);
+    border: 1px solid rgba(190, 150, 95, 0.6);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+
+/* Inputs */
+.rsvp-form input,
+.rsvp-form select {
+    width: 100%;
+    max-width: 420px;
+
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.2rem;
+
+    color: #3b2a1a;
+    background: rgba(255, 245, 225, 0.92);
+
+    border: 1px solid rgba(190, 150, 95, 0.55);
+    border-radius: 999px;
+
+    outline: none;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+.rsvp-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236d4c2f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.4rem center;
+    background-size: 10px 6px;
+    padding-right: 3rem;
+}
+
+.rsvp-form input::placeholder {
+    color: rgba(90, 60, 35, 0.55);
+    letter-spacing: 0.1em;
+}
+
+
+/* Couple */
+.couple-frame {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 2rem;
+}
+
+.frame-border {
+    position: relative;
+    padding: 14px;
+    border-radius: 22px;
+
+    background: linear-gradient(135deg,
+            rgba(215, 180, 120, 0.9),
+            rgba(150, 110, 60, 0.9));
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.frame-border {
+    position: relative;
+}
+
+.frame-border::after {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    background: radial-gradient(circle,
+            rgba(215, 180, 120, 0.15),
+            transparent 70%);
+    z-index: -1;
+}
+
+
+
+
+.couple-img {
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    background: #fff8ec;
+}
+
+.couple-quote {
+    text-align: center;
+    margin-top: 1.6rem;
+
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+
+    color: rgba(243, 230, 200, 0.75);
+}
+
+/* Footer Car */
+.footer-car {
+    width: 300px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.end-title {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+/* TODAY message */
+.countdown-today {
+    font-size: clamp(1.4rem, 5vw, 2.6rem);
+    letter-spacing: 0.2em;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* PAST message */
+.countdown-past {
+    font-size: clamp(1.1rem, 4vw, 2rem);
+    opacity: 0.85;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bg-img {
+        min-height: var(--section-height-md);
+    }
+
+    .segue-bg-img {
+        min-height: var(--section-height-md);
+    }
+
+    .names-container {
+        margin-top: 7vh;
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .date-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .couple-img {
+        max-width: 260px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .map-wrapper {
+        max-width: 92%;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .hero-bg-img {
+        min-height: var(--section-height-lg);
+    }
+
+    .segue-bg-img {
+        min-height: var(--section-height-lg);
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .date-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 380px) {
+    #invite {
+        height: 60rem;
+    }
+}
