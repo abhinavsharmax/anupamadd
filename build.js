@@ -88,11 +88,18 @@ try {
     replaceText('footer-hashtag', weddingData.couple.hashtag);
 
     // === 3. Links ===
+    // === 3. Links ===
     if (weddingData.wedding.venue.googleMapsUrl) {
-        html = html.replace(
-            /(<a\s+href=")[^"]*("\s+class="btn-primary"\s+target="_blank">\s*<span class="btn-text">Get Directions<\/span>\s*<\/a>)/i,
-            `$1${weddingData.wedding.venue.googleMapsUrl}$2`
-        );
+        // More robust regex: finds the 'Get Directions' button regardless of attributes order or existence of target="_blank"
+        const mapLinkRegex = /<a\s+href="[^"]*"\s+class="btn-primary"[^>]*>\s*<span class="btn-text">Get Directions<\/span>\s*<\/a>/i;
+        if (mapLinkRegex.test(html)) {
+            html = html.replace(
+                mapLinkRegex,
+                `<a href="${weddingData.wedding.venue.googleMapsUrl}" class="btn-primary" target="_blank">
+                            <span class="btn-text">Get Directions</span>
+                        </a>`
+            );
+        }
     }
     if (weddingData.contact.instagram) {
         html = html.replace(
@@ -133,8 +140,8 @@ ${cardsHtml}
     const dataScript = `<script id="wedding-data-script">window.weddingData = ${JSON.stringify(weddingData)};</script>`;
 
     if (html.includes('id="wedding-data-script"')) {
-        // Replace existing script tag
-        html = html.replace(/<script id="wedding-data-script">.*?<\/script>/, dataScript);
+        // Replace existing script tag - use [\s\S] and handle potential attributes/newlines
+        html = html.replace(/<script[^>]*id="wedding-data-script"[^>]*>[\s\S]*?<\/script>/i, dataScript);
     } else {
         // Insert before script.js for the first time
         html = html.replace(/(<script src="script.js"><\/script>)/, `${dataScript}\n    $1`);
