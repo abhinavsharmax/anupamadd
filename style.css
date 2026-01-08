@@ -646,7 +646,7 @@ h3 {
 
 .event-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 200;
     letter-spacing: 0.15em;
     margin-bottom: 0.6rem;
@@ -655,7 +655,7 @@ h3 {
 .event-card h3::before {
     content: "✦";
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 0.4rem;
     color: rgba(190, 150, 95, 0.9);
 }
@@ -672,7 +672,7 @@ h3 {
 
 .event-card p {
     margin: 0.3rem 0;
-    font-size: 0.85rem;
+    font-size: 1rem;
     letter-spacing: 0.08em;
     color: rgba(60, 40, 20, 0.85);
 }
@@ -1159,4 +1159,16 @@ a.btn-primary {
         transform: scale(1.2);
         opacity: 0;
     }
+}
+.route-venue {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
