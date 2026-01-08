@@ -1,60 +1,60 @@
 {
     "couple": {
         "groom": {
-            "name": "Karan",
+            "name": "Avanish",
             "parents": {
-                "mother": "Smt. Lata Devi",
-                "father": "Sm. Kamal Kapoor"
+                "mother": "Manju Lata Upadhyay",
+                "father": "Umesh Chandra Upadhyay"
             }
         },
         "bride": {
-            "name": "Vidhi",
+            "name": "Anupama",
             "parents": {
-                "mother": "Smt. Hema Shastri",
-                "father": "Sm. Kamesh Shastri"
+                "mother": "Chanchal Dubey",
+                "father": "Rajesh Kumar Dubey"
             }
         },
-        "hashtag": "#KaranKiVidhi"
+        "hashtag": "#AvanishAnupama"
     },
     "wedding": {
-        "date": "2026-02-04T18:30:00Z",
+        "date": "2026-02-05T18:30:00Z",
         "displayDate": "FEBRUARY 4th & 5th, 2026"
     },
     "celebrations": [
         {
-            "name": "Haldi",
-            "date": "Dec 19, 2025",
-            "time": "10:00 AM",
-            "venue": "Poolside Lawns",
+            "name": "Tilak & Godh Bharai",
+            "date": "Feb 04, 2026",
+            "time": "2:00 PM Onwards",
+            "venue": "Traditional Indian Wear",
             "showLocation": false
         },
         {
-            "name": "Mehendi",
-            "date": "Dec 19, 2025",
-            "time": "4:00 PM",
-            "venue": "Royal Courtyard",
+            "name": "Sangeet Evening",
+            "date": "Feb 04, 2026",
+            "time": "7:00 PM",
+            "venue": "Shimmer & Shine",
             "showLocation": false
         },
         {
-            "name": "Sangeet",
-            "date": "Dec 19, 2025",
-            "time": "8:00 PM",
-            "venue": "Grand Ballroom",
+            "name": "Haldi Carnival",
+            "date": "Feb 05, 2026",
+            "time": "1:00 PM",
+            "venue": "Lavender & Yellow Delight",
             "showLocation": false
         },
         {
-            "name": "Wedding",
-            "date": "Jan 23, 2026",
-            "time": "8:00 PM",
-            "venue": "Palace Gardens",
-            "googleMapsUrl": "https://maps.google.com/?q=Palace+Gardens",
+            "name": "The Wedding",
+            "date": "Feb 05, 2026",
+            "time": "7:00 PM",
+            "venue": "Traditional Elegance",
+            "googleMapsUrl": "https://maps.app.goo.gl/nMeBLK6ChHTeQQPh7",
             "mapImage": "assets/images/map.png",
             "highlight": true,
             "showLocation": true
         }
     ],
     "contact": {
-        "whatsapp": "919341987480",
+        "whatsapp": "919643574790",
         "instagram": "https://instagram.com/takshstore"
     },
     "messages": {
@@ -66,5 +66,5 @@
         "url": "assets/music/music.mpeg",
         "autoplay": true
     },
-    "websiteUrl": "https://takshweddinginvitedemo.netlify.app"
+    "websiteUrl": "https://avanishwedsanupama.netlify.app"
 }
