@@ -8,13 +8,13 @@
             }
         },
         "bride": {
-            "name": "Anupama",
+            "name": "Anupma",
             "parents": {
                 "mother": "Chanchal Dubey",
                 "father": "Rajesh Kumar Dubey"
             }
         },
-        "hashtag": "#AvanishAnupama"
+        "hashtag": "#AvanishAnupma"
     },
     "wedding": {
         "date": "2026-02-05T18:30:00Z",
@@ -66,5 +66,5 @@
         "url": "assets/music/music.mp3",
         "autoplay": true
     },
-    "websiteUrl": "https://avanishwedsanupama.netlify.app"
+    "websiteUrl": "https://avanishwedsanupma.netlify.app"
 }
